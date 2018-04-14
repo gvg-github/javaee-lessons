@@ -2,10 +2,11 @@
 <html>
 <head>
     <title>Title</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-
-<img src="404.jpg" />
-
+<div class="img">
+	<img src="404.jpg" />
+</div>
 </body>
 </html>

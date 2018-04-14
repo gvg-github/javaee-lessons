@@ -13,6 +13,6 @@ public class CartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        resp.getWriter().println("Hello");
         req.setAttribute("namePage", "Cart page");
-        req.getRequestDispatcher("main.jsp").forward(req, resp);
+        req.getRequestDispatcher("cart.jsp").forward(req, resp);
     }
 }

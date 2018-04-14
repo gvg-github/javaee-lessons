@@ -1,7 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-	<meta charset=<%=request.getAttribute("code") %>>
+	<meta charset="UTF-8">
 	<title>Main page</title>	
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
@@ -18,8 +19,14 @@
 </div>
 
 <div class="page">
-<h2><%=request.getAttribute("namePage") %></h2>
+	<h2><%=request.getAttribute("namePage") %></h2>	
+	<div>
+		<c:forEach var="product" items="${products}">
+			<a href="${pageContext.request.contextPath}/product">NAME: <c:out value="${product}"/></a>
+		</c:forEach>
+	</div>
 </div>
+
 
 <footer>
 <p>&#169; Все права защищены.</p>

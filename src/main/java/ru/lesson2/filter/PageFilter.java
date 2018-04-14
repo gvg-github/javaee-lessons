@@ -12,7 +12,7 @@ public class PageFilter implements javax.servlet.Filter {
     }
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        request.setAttribute("code", "UTF-8");
+        request.setCharacterEncoding("UTF-8");
         chain.doFilter(request, response);
     }
 

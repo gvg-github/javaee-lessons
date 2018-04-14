@@ -13,6 +13,6 @@ public class OrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        resp.getWriter().println("Hello");
         req.setAttribute("namePage", "Order page");
-        req.getRequestDispatcher("main.jsp").forward(req, resp);
+        req.getRequestDispatcher("order.jsp").forward(req, resp);
     }
 }
