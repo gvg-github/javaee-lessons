@@ -22,7 +22,10 @@
 	<h2><%=request.getAttribute("namePage") %></h2>	
 	<div>
 		<c:forEach var="product" items="${products}">
-			<a href="${pageContext.request.contextPath}/product">NAME: <c:out value="${product}"/></a>
+		<div>
+			<a href="${pageContext.request.contextPath}/product">NAME: <c:out value="${product.name}"/></a>
+			<a href="${pageContext.request.contextPath}/product">COST: <c:out value="${product.cost}"/></a>
+		</div>	
 		</c:forEach>
 	</div>
 </div>

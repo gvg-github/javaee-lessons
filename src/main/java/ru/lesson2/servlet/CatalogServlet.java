@@ -1,5 +1,7 @@
 package ru.lesson2.servlet;
 
+import ru.lesson2.Product;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,16 +16,17 @@ public class CatalogServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        resp.getWriter().println("Hello");
-        List<String> products = new ArrayList<String>();
-        products.add("Product1");
-        products.add("Product2");
-        products.add("Product3");
-        products.add("Product4");
-        products.add("Product5");
-        products.add("Product6");
-        products.add("Product7");
-        products.add("Product8");
-        products.add("Product9");
+        List<Product> products = new ArrayList<Product>();
+        products.add(new Product(100, "Product1"));
+        products.add(new Product(200, "Product2"));
+        products.add(new Product(300, "Product3"));
+        products.add(new Product(400, "Product4"));
+        products.add(new Product(500, "Product5"));
+        products.add(new Product(600, "Product6"));
+        products.add(new Product(700, "Product7"));
+        products.add(new Product(800, "Product8"));
+        products.add(new Product(900, "Product9"));
+
         req.setAttribute("products", products);
         req.setAttribute("namePage", "Catalog page");
         req.getRequestDispatcher("catalog.jsp").forward(req, resp);

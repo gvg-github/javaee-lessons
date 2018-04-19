@@ -14,7 +14,7 @@
 	<li><a href="${pageContext.request.contextPath}/catalog"><span>Catalog</span></a></li>
 	<li><a href="${pageContext.request.contextPath}/product"><span>Product</span></a></li>
 	<li><a href="${pageContext.request.contextPath}/cart"><span>Cart</span></a></li>
-	<li><a href="${pageContext.request.contextPath}/order"><span>Order</span></a></li> 
+	<li><a href="${pageContext.request.contextPath}/order"><span>Order</span></a></li> 	
 </ul>
 </div>
 
