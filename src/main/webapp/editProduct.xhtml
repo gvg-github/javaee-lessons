@@ -20,18 +20,25 @@
             <p:outputLabel value="NAME" />
         </p:outputPanel>
         <p:outputPanel style="margin-bottom: 20px;">
-            <p:inputText value="#{EditProductController.product.name}" />
+            <p:inputText value="#{editProductController.product.name}" />
         </p:outputPanel>
 
         <p:outputPanel>
             <p:outputLabel value="COST" />
         </p:outputPanel>
         <p:outputPanel style="margin-bottom: 20px;">
-            <p:inputText value="#{EditProductController.product.cost}" />
+            <p:inputText value="#{editProductController.product.cost}" />
+        </p:outputPanel>
+		
+		<p:outputPanel>
+            <p:outputLabel value="COUNT" />
+        </p:outputPanel>
+        <p:outputPanel style="margin-bottom: 20px;">
+            <p:inputText value="#{editProductController.product.count}" />
         </p:outputPanel>
 
         <p:outputPanel>
-            <p:commandButton value="SAVE" action="#{EditProductController.save}" />
+            <p:commandButton value="SAVE" action="#{editProductController.save}" />
         </p:outputPanel>
 
     </h:form>

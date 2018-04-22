@@ -16,7 +16,8 @@
 
         <h1>PRODUCT LIST</h1>
 		
-		<p:dataTable value="#{EditProductController.products}" var="item" rowIndexVar="rowIndex"
+		
+		<p:dataTable value="#{editProductController.products}" var="item" rowIndexVar="rowIndex"
                      style="margin-bottom: 20px;" id="table">
             <p:column width="30" headerText="№" style="text-align: center;">
                 <p:outputLabel value="#{rowIndex +1}." />
@@ -27,30 +28,36 @@
             <p:column headerText="NAME" style="width: 100%; text-align: left;" sortable="true" sortBy="#{item.name}">
                 <p:outputLabel value="#{item.name}" />
             </p:column>
-			
-			<p:column headerText="COST" style="width: 100%; text-align: left;" sortable="false" sortBy="#{item.cost}">
+			<p:column headerText="COST" style="width: 100%; text-align: left;" sortable="false">
                 <p:outputLabel value="#{item.cost}" />
+            </p:column>
+			<p:column headerText="COUNT" style="width: 100%; text-align: left;" sortable="false">
+                <p:outputLabel value="#{item.count}" />
             </p:column>
 			
             <p:column width="80" style="text-align: center;">
                 <p:link value="EDIT" outcome="editProduct">
                     <f:param name="id" value="#{item.id}" />
+					<f:param name="name" value="#{item.name}" />
+					<f:param name="cost" value="#{item.cost}" />
+					<f:param name="count" value="#{item.count}" />
                 </p:link>
             </p:column>
             <p:column width="80" style="text-align: center;">
                 <p:commandLink title="REMOVE" update="table" value="REMOVE"
-                               actionListener="#{EditProductController.removeProduct(item)}" />
+                               actionListener="#{editProductController.removeProduct(item)}" />
             </p:column>
         </p:dataTable>
 
         <p:outputPanel style="margin-bottom: 20px;">
             <p:commandButton value="ADD PRODUCT" update="table"
-                             actionListener="#{EditProductController.addProduct}" />
-        </p:outputPanel>		
+                             actionListener="#{editProductController.addProduct}" />
+        </p:outputPanel>        
 		
 		<h1>CATEGORY LIST</h1>
 		
-		<p:dataTable value="#{EditCategoryController.categories}" var="category" rowIndexVar="rowIndex"
+		
+		<p:dataTable value="#{editCategoryController.categories}" var="category" rowIndexVar="rowIndex"
                      style="margin-bottom: 20px;" id="tableCategory">
             <p:column width="30" headerText="№" style="text-align: center;">
                 <p:outputLabel value="#{rowIndex +1}." />
@@ -65,22 +72,23 @@
             <p:column width="80" style="text-align: center;">
                 <p:link value="EDIT" outcome="editCategory">
                     <f:param name="id" value="#{category.id}" />
+					<f:param name="name" value="#{category.name}" />
                 </p:link>
             </p:column>
             <p:column width="80" style="text-align: center;">
                 <p:commandLink title="REMOVE" update="tableCategory" value="REMOVE"
-                               actionListener="#{EditCategoryController.removeCategory(category)}" />
+                               actionListener="#{editCategoryController.removeCategory(category)}" />
             </p:column>
         </p:dataTable>
 
-        <p:outputPanel style="margin-bottom: 20px;">
+		<p:outputPanel style="margin-bottom: 20px;">
             <p:commandButton value="ADD CATEGORY" update="tableCategory"
-                             actionListener="#{EditCategoryController.addCategory}" />
-        </p:outputPanel>		
+                             actionListener="#{editCategoryController.addCategory}" />
+        </p:outputPanel>
 		
-		<h1>ORDER LIST</h1>
+		<h1>ORDER LIST</h1>		
 		
-		<p:dataTable value="#{EditOrderController.orders}" var="order" rowIndexVar="rowIndex"
+		<p:dataTable value="#{editOrderController.orders}" var="order" rowIndexVar="rowIndex"
                      style="margin-bottom: 20px;" id="tableOrder">
             <p:column width="30" headerText="№" style="text-align: center;">
                 <p:outputLabel value="#{rowIndex +1}." />
@@ -88,8 +96,11 @@
             <p:column width="250" headerText="ID" sortable="true" sortBy="#{order.id}">
                 <p:outputLabel value="#{order.id}" />
             </p:column>
-            <p:column headerText="NAME" style="width: 100%; text-align: left;" sortable="true" sortBy="#{order.name}">
-                <p:outputLabel value="#{order.name}" />
+            <p:column headerText="NUMBER" style="width: 100%; text-align: left;" sortable="true" sortBy="#{order.number}">
+                <p:outputLabel value="#{order.number}" />
+            </p:column>			
+			<p:column headerText="DATE" style="width: 100%; text-align: left;" sortable="true" sortBy="#{order.date}">
+                <p:outputLabel value="#{order.date}" />
             </p:column>			
 			
             <p:column width="80" style="text-align: center;">
@@ -98,7 +109,12 @@
                 </p:link>
             </p:column>
             
-        </p:dataTable>       
+        </p:dataTable> 
+
+		<p:outputPanel style="margin-bottom: 20px;">
+            <p:commandButton value="ADD ORDER" update="tableOrder"
+                             actionListener="#{editOrderController.addOrder}" />
+        </p:outputPanel>
         
 
     </h:form>

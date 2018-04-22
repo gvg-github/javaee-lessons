@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+>
+<head>	
+	<title>Main page</title>	
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<ul type="square" class="menu">
+	<li><h:link outcome="main" value="Main"></h:link></li>
+	<li><h:link outcome="catalog" value="Catalog"></h:link></li>
+	<li><h:link outcome="editAll" value="Edit data"></h:link></li>
+	
+	<!-- <li><a href="${pageContext.request.contextPath}/product"><span>Product</span></a></li>
+	<li><a href="${pageContext.request.contextPath}/cart"><span>Cart</span></a></li>
+	<li><a href="${pageContext.request.contextPath}/order"><span>Order</span></a></li> --> 	
+</ul>
+</div>
+
+<div class="page">
+<h2>
+	<h:form>
+		<p:outputLabel value="#{pageBean.mainPage}"/>
+	</h:form>
+</h2>
+</div>
+
+<footer>
+<p>&#169; Все права защищены.</p>
+</footer>
+</div>
+</body>
+</html>

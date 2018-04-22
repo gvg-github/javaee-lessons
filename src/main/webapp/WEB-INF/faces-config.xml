@@ -6,18 +6,47 @@
         version="2.1">
 
     <navigation-rule>
+
         <navigation-case>
-            <from-outcome>mega</from-outcome>
-            <to-view-id>/mega.xhtml</to-view-id>
+            <from-outcome>editCategory</from-outcome>
+            <to-view-id>/editCategory.xhtml</to-view-id>
         </navigation-case>
+
         <navigation-case>
-            <from-outcome>test</from-outcome>
-            <to-view-id>/test.xhtml</to-view-id>
+            <from-outcome>editProduct</from-outcome>
+            <to-view-id>/editProduct.xhtml</to-view-id>
         </navigation-case>
+
         <navigation-case>
-            <from-outcome>edit</from-outcome>
-            <to-view-id>/edit.xhtml</to-view-id>
+            <from-outcome>viewOrder</from-outcome>
+            <to-view-id>/editOrder.xhtml</to-view-id>
         </navigation-case>
+
+        <!--<from-view-id>main.xhtml</from-view-id>-->
+        <!--<navigation-case>-->
+            <!--<from-outcome>catalog</from-outcome>-->
+            <!--<to-view-id>/catalog.xhtml</to-view-id>-->
+        <!--</navigation-case>-->
+        <!--<navigation-case>-->
+            <!--<from-outcome>main</from-outcome>-->
+            <!--<to-view-id>/main.xhtml</to-view-id>-->
+        <!--</navigation-case>-->
+
+        <navigation-case>
+            <from-outcome>catalog</from-outcome>
+            <to-view-id>/catalog.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>main</from-outcome>
+            <to-view-id>/main.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>editAll</from-outcome>
+            <to-view-id>/editAll.xhtml</to-view-id>
+        </navigation-case>
+
     </navigation-rule>
 
 </faces-config>

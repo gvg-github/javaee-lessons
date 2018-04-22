@@ -14,24 +14,24 @@
 
     <h:form>
 
-        <h1>PRODUCT EDIT</h1>
+        <h1>ORDER EDIT</h1>
 		
         <p:outputPanel>
-            <p:outputLabel value="NAME" />
+            <p:outputLabel value="NUMBER" />
         </p:outputPanel>
         <p:outputPanel style="margin-bottom: 20px;">
-            <p:inputText value="#{EditController.product.name}" />
-        </p:outputPanel>
-
-        <p:outputPanel>
-            <p:outputLabel value="COST" />
+            <p:outputLabel value="#{editOrderController.shopOrder.number}" />
+        </p:outputPanel>       
+		
+		<p:outputPanel>
+            <p:outputLabel value="DATE" />
         </p:outputPanel>
         <p:outputPanel style="margin-bottom: 20px;">
-            <p:inputText value="#{EditController.product.cost}" />
-        </p:outputPanel>
+            <p:outputLabel value="#{editOrderController.shopOrder.date}" />
+        </p:outputPanel>       
 
         <p:outputPanel>
-            <p:commandButton value="SAVE" action="#{EditController.save}" />
+            <p:commandButton value="RETURN" action="#{editOrderController.save}" />
         </p:outputPanel>
 
     </h:form>

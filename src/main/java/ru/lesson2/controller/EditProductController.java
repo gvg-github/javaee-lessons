@@ -1,16 +1,18 @@
 package ru.lesson2.controller;
 
-import ru.lesson2.Product;
-import ru.lesson2.ProductDAO;
+import ru.lesson2.dao.ProductDAO;
+import ru.lesson2.entity.Product;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 @ViewScoped
-@ManagedBean(name="editProduct")
-public class EditProductController extends AbstractController{
+@ManagedBean
+public class EditProductController extends AbstractController {
 
     private final String id = getParamString("id");
 
@@ -36,8 +38,19 @@ public class EditProductController extends AbstractController{
         productDAO.persist(new Product());
     }
 
+    public void removeProduct(Product product) {
+        productDAO.removeProduct(product.getId());
+    }
+
+    public List<Product> getProducts() {
+        return new ArrayList<>(productDAO.getListProduct());
+    }
+
     public String save() {
         productDAO.merge(product);
         return "editAll";
     }
+
 }
+
+
