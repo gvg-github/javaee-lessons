@@ -10,6 +10,9 @@ public class pageBean {
 
     final private String mainPage = "Main page";
     final private String catalogPage = "Catalog page";
+    final private String cartPage = "Cart page";
+    final private String orderPage = "Order page";
+    final private String productPage = "Product page";
 
     public String getCatalogPage() {
         return catalogPage;
@@ -17,5 +20,17 @@ public class pageBean {
 
     public String getMainPage() {
         return mainPage;
+    }
+
+    public String getProductPage() {
+        return productPage;
+    }
+
+    public String getOrderPage() {
+        return orderPage;
+    }
+
+    public String getCartPage() {
+        return cartPage;
     }
 }

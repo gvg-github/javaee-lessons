@@ -8,7 +8,7 @@
 	  xmlns:p="http://primefaces.org/ui"
 >
 <head>	
-	<title>Main page</title>	
+	<title>Order page</title>	
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
@@ -18,15 +18,14 @@
 	<li><h:link outcome="main" value="Main"></h:link></li>
 	<li><h:link outcome="catalog" value="Catalog"></h:link></li>
 	<li><h:link outcome="cart" value="Cart"></h:link></li>
-	<li><h:link outcome="order" value="Order"></h:link></li>
-	<li><h:link outcome="editAll" value="Edit data"></h:link></li>
+	<li><h:link outcome="order" value="Order"></h:link></li>	
 </ul>
 </div>
 
 <div class="page">
 <h2>
 	<h:form>
-		<p:outputLabel value="#{pageBean.mainPage}"/>
+		<p:outputLabel value="#{pageBean.orderPage}"/>
 	</h:form>
 </h2>
 </div>
