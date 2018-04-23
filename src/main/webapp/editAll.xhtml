@@ -28,6 +28,11 @@
             <p:column headerText="NAME" style="width: 100%; text-align: left;" sortable="true" sortBy="#{item.name}">
                 <p:outputLabel value="#{item.name}" />
             </p:column>
+			
+			<p:column headerText="CATEGORY" style="width: 100%; text-align: left;" sortable="true" sortBy="#{item.category}">
+                <p:outputLabel value="#{item.category}" />
+            </p:column>
+			
 			<p:column headerText="COST" style="width: 100%; text-align: left;" sortable="false">
                 <p:outputLabel value="#{item.cost}" />
             </p:column>
@@ -39,6 +44,7 @@
                 <p:link value="EDIT" outcome="editProduct">
                     <f:param name="id" value="#{item.id}" />
 					<f:param name="name" value="#{item.name}" />
+					<f:param name="category" value="#{item.category}" />
 					<f:param name="cost" value="#{item.cost}" />
 					<f:param name="count" value="#{item.count}" />
                 </p:link>
@@ -101,11 +107,13 @@
             </p:column>			
 			<p:column headerText="DATE" style="width: 100%; text-align: left;" sortable="true" sortBy="#{order.date}">
                 <p:outputLabel value="#{order.date}" />
-            </p:column>			
+            </p:column>
 			
-            <p:column width="80" style="text-align: center;">
-                <p:link value="VIEW" outcome="viewOrder">
+			<p:column width="80" style="text-align: center;">
+                <p:link value="EDIT" outcome="editOrder">
                     <f:param name="id" value="#{order.id}" />
+					<f:param name="number" value="#{order.number}" />
+                    <f:param name="date" value="#{order.date}" />
                 </p:link>
             </p:column>
             

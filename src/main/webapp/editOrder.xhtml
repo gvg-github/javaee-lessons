@@ -29,9 +29,53 @@
         <p:outputPanel style="margin-bottom: 20px;">
             <p:outputLabel value="#{editOrderController.shopOrder.date}" />
         </p:outputPanel>       
+		
+		<h1>PRODUCT LIST</h1>		
+		
+		<p:dataTable value="#{editProductController.products}" var="item" rowIndexVar="rowIndex"
+                     style="margin-bottom: 20px;" id="table">
+            <p:column width="30" headerText="№" style="text-align: center;">
+                <p:outputLabel value="#{rowIndex +1}." />
+            </p:column>
+            <p:column width="250" headerText="ID" sortable="true" sortBy="#{item.id}">
+                <p:outputLabel value="#{item.id}" />
+            </p:column>
+            <p:column headerText="NAME" style="width: 100%; text-align: left;" sortable="true" sortBy="#{item.name}">
+                <p:outputLabel value="#{item.name}" />
+            </p:column>
+			
+			<p:column headerText="CATEGORY" style="width: 100%; text-align: left;" sortable="true" sortBy="#{item.category}">
+                <p:outputLabel value="#{item.category}" />
+            </p:column>
+			
+			<p:column headerText="COST" style="width: 100%; text-align: left;" sortable="false">
+                <p:outputLabel value="#{item.cost}" />
+            </p:column>
+			<p:column headerText="COUNT" style="width: 100%; text-align: left;" sortable="false">
+                <p:outputLabel value="#{item.count}" />
+            </p:column>
+			
+            <p:column width="80" style="text-align: center;">
+                <p:link value="EDIT" outcome="editProductFromOrder">
+                    <f:param name="id" value="#{item.id}" />
+					<f:param name="name" value="#{item.name}"/>					
+					<f:param name="cost" value="#{item.cost}" />
+					<f:param name="count" value="#{item.count}" />
+                </p:link>
+            </p:column>
+            <p:column width="80" style="text-align: center;">
+                <p:commandLink title="REMOVE" update="table" value="REMOVE"
+                               actionListener="#{editProductController.removeProduct(item)}" />
+            </p:column>
+        </p:dataTable>
+
+        <p:outputPanel style="margin-bottom: 20px;">
+            <p:commandButton value="ADD PRODUCT" update="table"
+                             actionListener="#{editProductController.addProduct}" />
+        </p:outputPanel>		
 
         <p:outputPanel>
-            <p:commandButton value="RETURN" action="#{editOrderController.save}" />
+            <p:commandButton value="SAVE" action="#{editOrderController.save}" />
         </p:outputPanel>
 
     </h:form>

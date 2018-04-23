@@ -3,13 +3,14 @@ package ru.lesson2.dao;
 import ru.lesson2.entity.ShopOrder;
 
 import javax.ejb.Stateless;
+import javax.persistence.NamedQuery;
 import java.util.List;
 
 @Stateless
 public class OrderDAO extends AbstractDAO {
 
     public List<ShopOrder> getListOrder() {
-        return em.createQuery("SELECT e FROM ShopOrder e", ShopOrder.class).getResultList();
+        return em.createNamedQuery("findAllOrders", ShopOrder.class).getResultList();
     }
 
     public void persist(ShopOrder shopOrder) {

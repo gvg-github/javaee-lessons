@@ -1,15 +1,23 @@
 package ru.lesson2.dao;
 
 import ru.lesson2.entity.Category;
+import ru.lesson2.entity.Product;
 
 import javax.ejb.Stateless;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.*;
 
 @Stateless
 public class CategoryDAO extends AbstractDAO{
 
     public List<Category> getListCategory() {
-        return em.createQuery("SELECT e FROM Category e", Category.class).getResultList();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Category> query = cb.createQuery(Category.class);
+        Root<Category> c = query.from(Category.class);
+        query.select(c);
+        return em.createQuery(query).getResultList();
     }
 
     public void persist(Category category) {

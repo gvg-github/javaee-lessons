@@ -14,6 +14,28 @@ public class Product extends AbstractEntity {
     @Column
     private String description = "";
 
+    @ManyToOne
+    private Category category;
+
+    @ManyToOne
+    private ShopOrder order;
+
+    public ShopOrder getOrder() {
+        return order;
+    }
+
+    public void setOrder(ShopOrder order) {
+        this.order = order;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public String getDescription() {
         return description;
     }

@@ -21,17 +21,7 @@
         </p:outputPanel>
         <p:outputPanel style="margin-bottom: 20px;">
             <p:inputText value="#{editProductController.product.name}" />
-        </p:outputPanel>
-		
-		<p:outputPanel>
-            <p:outputLabel value="CATEGORY" />
-        </p:outputPanel>
-        <p:outputPanel style="margin-bottom: 20px;">
-            <h:selectOneMenu value="#{editProductController.product.category}">
-				<f:selectItems value="#{editCategoryController.categories}" var="c" itemLabel ="#{c.name}" itemValue="#{c}" />
-            <!-- <f:selectItems id="siCategory" value="#{editProductController.product.category}" /> -->
-			</h:selectOneMenu>			
-        </p:outputPanel>
+        </p:outputPanel>		
 
         <p:outputPanel>
             <p:outputLabel value="COST" />
@@ -48,7 +38,7 @@
         </p:outputPanel>
 
         <p:outputPanel>
-            <p:commandButton value="SAVE" action="#{editProductController.save}" />
+            <p:commandButton value="SAVE" action="#{editProductController.saveFromOrder}" />
         </p:outputPanel>
 
     </h:form>

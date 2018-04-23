@@ -51,6 +51,11 @@ public class EditProductController extends AbstractController {
         return "editAll";
     }
 
+    public String saveFromOrder() {
+        productDAO.merge(product);
+        return "editOrder";
+    }
+
 }
 
 
