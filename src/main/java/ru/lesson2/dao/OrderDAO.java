@@ -1,12 +1,15 @@
 package ru.lesson2.dao;
 
 import ru.lesson2.entity.ShopOrder;
+import ru.lesson2.interceptor.LogInterceptor;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.NamedQuery;
 import java.util.List;
 
 @Stateless
+@Interceptors({LogInterceptor.class})
 public class OrderDAO extends AbstractDAO {
 
     public List<ShopOrder> getListOrder() {

@@ -2,14 +2,17 @@ package ru.lesson2.dao;
 
 import ru.lesson2.entity.Category;
 import ru.lesson2.entity.Product;
+import ru.lesson2.interceptor.LogInterceptor;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.*;
 
 @Stateless
+@Interceptors({LogInterceptor.class})
 public class CategoryDAO extends AbstractDAO{
 
     public List<Category> getListCategory() {

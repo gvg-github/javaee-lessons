@@ -1,11 +1,14 @@
 package ru.lesson2.dao;
 
 import ru.lesson2.entity.Product;
+import ru.lesson2.interceptor.LogInterceptor;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import java.util.List;
 
 @Stateless
+@Interceptors({LogInterceptor.class})
 public class ProductDAO extends AbstractDAO {
 
 //    public List<Product> getListProductByCategoryId(
