@@ -11,13 +11,13 @@ import java.util.List;
 @Interceptors({LogInterceptor.class})
 public class ProductDAO extends AbstractDAO {
 
-//    public List<Product> getListProductByCategoryId(
-//            String categoryId
-//    ) {
-//        if (categoryId == null || categoryId.isEmpty()) return getListProduct();
-//        return em.createQuery("SELECT e FROM Product e WHERE e.category.id = :categoryId", Product.class)
-//                .setParameter("categoryId", categoryId).getResultList();
-//    }
+    public List<Product> getListProductByCategoryId(
+            String categoryId
+    ) {
+        if (categoryId == null || categoryId.isEmpty()) return getListProduct();
+        return em.createQuery("SELECT e FROM Product e WHERE e.category.id = :categoryId", Product.class)
+                .setParameter("categoryId", categoryId).getResultList();
+    }
 
     public List<Product> getListProduct() {
         return em.createQuery("SELECT e FROM Product e", Product.class).getResultList();
@@ -31,6 +31,11 @@ public class ProductDAO extends AbstractDAO {
     public Product getProductById(String id) {
         if (id == null) return null;
         return em.find(Product.class, id);
+    }
+
+    public Product getProductByName(String name) {
+        if (name == null) return null;
+        return em.find(Product.class, name);
     }
 
     public void merge(Product product) {
