@@ -1,4 +1,4 @@
-package ru.lesson2.service;
+package ru.lesson2.webservice;
 
 import ru.lesson2.dao.CategoryDAO;
 import ru.lesson2.dao.ProductDAO;

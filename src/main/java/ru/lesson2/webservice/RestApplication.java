@@ -1,4 +1,4 @@
-package ru.lesson2.service;
+package ru.lesson2.webservice;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

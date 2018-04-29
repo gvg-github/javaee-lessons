@@ -1,4 +1,4 @@
-package ru.lesson2.service;
+package ru.lesson2.webservice;
 
 import ru.lesson2.dao.CategoryDAO;
 import ru.lesson2.dao.ProductDAO;
@@ -10,9 +10,10 @@ import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
-@WebService
+@WebService()
 public class ProductServiceJAX_WS {
 
     @Inject
