@@ -1,19 +1,19 @@
 package ru.lesson2.webservice;
 
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
-import java.net.URL;
+import javax.xml.ws.WebServiceRef;
 
 public class ClientJAX_WS {
 
+    @WebServiceRef(wsdlLocation = "http://localhost:9999/ws/myWebService?WSDL")
+    private static ServiceJAXWSService service;
+
     public static void main(String[] args) throws Exception {
 
-        URL url = new URL("http://localhost:9999/ws/productService?wsdl");
-        QName qname = new QName("http://webservice.lesson2.ru/", "ProductServiceJAX_WSService");
-
-        Service service = Service.create(url, qname);
-        ProductServiceJAX_WS test = service.getPort(ProductServiceJAX_WS.class);
-
+        IServiceJAXWS port = service.getServiceJAXWSPort();
+        for (ProductRecord record: port.getListProduct()
+             ) {
+            System.out.println(record.getName());
+        }
     }
 
 }

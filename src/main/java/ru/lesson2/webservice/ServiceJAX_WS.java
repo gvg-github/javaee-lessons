@@ -6,46 +6,50 @@ import ru.lesson2.dto.ProductRecord;
 import ru.lesson2.entity.Category;
 import ru.lesson2.entity.Product;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
-@WebService()
-public class ProductServiceJAX_WS {
+@WebService(endpointInterface = "ru.lesson2.webservice.iServiceJAX_WS")
+public class ServiceJAX_WS implements iServiceJAX_WS {
 
-    @Inject
+//    @Inject
+//    private ProductDAO productDAO;
+//
+//    @Inject
+//    private CategoryDAO categoryDAO;
+
+    @EJB
     private ProductDAO productDAO;
 
-    @Inject
+    @EJB
     private CategoryDAO categoryDAO;
 
-    @WebMethod
+    @Override
     public void createCatregoryByName(
-            @WebParam(name = "name", partName = "name") String name
+            String name
     ) {
         final Category category = new Category();
         category.setName(name);
         categoryDAO.merge(category);
     }
 
-    @WebMethod
+    @Override
     public List<ProductRecord> getListProduct() {
         return ProductRecord.toList(productDAO.getListProduct());
     }
 
-    @WebMethod
+    @Override
     public List<ProductRecord> getListProductWithCategoryId(
-            @WebParam(name = "id", partName = "id") String id
+            String id
     ) {
         return ProductRecord.toList(productDAO.getListProductByCategoryId(id));
     }
 
-    @WebMethod
+    @Override
     public void createProductByName(
-            @WebParam(name = "name", partName = "name") String name
+            String name
     ) {
         final Product product = new Product();
         product.setName(name);
@@ -53,27 +57,27 @@ public class ProductServiceJAX_WS {
         productDAO.merge(product);
     }
 
-    @WebMethod
+    @Override
     public ProductRecord getProductById(
-            @WebParam(name = "id", partName = "id") String id
+            String id
     ) {
         Product product = productDAO.getProductById(id);
         if (product == null) return null;
         return new ProductRecord(product);
     }
 
-    @WebMethod
+    @Override
     public ProductRecord getProductByName(
-            @WebParam(name = "name", partName = "name") String name
+            String name
     ) {
         Product product = productDAO.getProductByName(name);
         if (product == null) return null;
         return new ProductRecord(product);
     }
 
-    @WebMethod
+    @Override
     public void removeProductById(
-            @WebParam(name = "id", partName = "id") String id
+            String id
     ) {
         productDAO.removeProduct(id);
     }

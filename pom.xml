@@ -46,31 +46,31 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>jaxws-maven-plugin</artifactId>-->
-                <!--<version>2.5</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>wsimport-from-jdk</id>-->
-                        <!--<goals>-->
-                            <!--<goal>wsimport</goal>​-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<wsdlUrls>-->
-                        <!--<wsdlUrl>-->
-                            <!--http://localhost:9999/ws/productService?WSDL-->
-                        <!--</wsdlUrl>​-->
-                    <!--</wsdlUrls>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wsdlUrls>
+                        <wsdlUrl>
+                            http://localhost:9999/ws/myWebService?WSDL
+                        </wsdlUrl>​
+                    </wsdlUrls>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
