@@ -7,7 +7,7 @@ import ru.lesson2.dto.ProductRecord;
 import java.util.List;
 
 @WebService
-public interface iServiceJAX_WS {
+public interface WebServiceInterface {
 
     @WebMethod
     public void createCatregoryByName(

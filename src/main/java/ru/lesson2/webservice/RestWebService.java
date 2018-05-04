@@ -19,7 +19,7 @@ import java.util.List;
 
 @Path("/restService")
 @WebService
-public class ServiceJAX_RS {
+public class RestWebService {
 
     @Inject
     private ProductDAO productDAO;

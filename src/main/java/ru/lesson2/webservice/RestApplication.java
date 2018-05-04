@@ -11,7 +11,7 @@ public class RestApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         final Set<Class<?>> result = new HashSet<>();
-        result.add(ServiceJAX_RS.class);
+        result.add(RestWebService.class);
         return super.getClasses();
     }
 }

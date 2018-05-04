@@ -1,6 +1,8 @@
 package ru.lesson2.servlet;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpMethodConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/product")
+@ServletSecurity(httpMethodConstraints = {
+        @HttpMethodConstraint(value = "GET", rolesAllowed = "ADMIN"),
+        @HttpMethodConstraint(value = "POST", rolesAllowed = "ADMIN")})
 public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

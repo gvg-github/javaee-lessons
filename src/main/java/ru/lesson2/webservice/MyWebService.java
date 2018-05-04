@@ -7,12 +7,11 @@ import ru.lesson2.entity.Category;
 import ru.lesson2.entity.Product;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.jws.WebService;
 import java.util.List;
 
-@WebService(endpointInterface = "ru.lesson2.webservice.iServiceJAX_WS")
-public class ServiceJAX_WS implements iServiceJAX_WS {
+@javax.jws.WebService(endpointInterface = "ru.lesson2.webservice.WebServiceInterface")
+public class MyWebService implements WebServiceInterface {
 
 //    @Inject
 //    private ProductDAO productDAO;

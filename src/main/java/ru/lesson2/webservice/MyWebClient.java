@@ -2,7 +2,7 @@ package ru.lesson2.webservice;
 
 import javax.xml.ws.WebServiceRef;
 
-public class ClientJAX_WS {
+public class MyWebClient {
 
     @WebServiceRef(wsdlLocation = "http://localhost:9999/ws/myWebService?WSDL")
     private static ServiceJAXWSService service;
